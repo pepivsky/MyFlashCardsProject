@@ -1,0 +1,77 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-image: url("world.png");
+    background-size: cover;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+
+}
+
+
+.card{
+    height: 300px;
+    width: 300px;
+    position: relative;
+    transition: all 1s linear;
+    transform-style: preserve-3d;
+}
+
+.front,
+.back{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    font-family: 'Lobster', cursive;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.front{
+    background:  #2af598;
+    z-index: 2;
+    backface-visibility: hidden;
+
+}
+
+.back{
+    background: purple;
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+
+.grid-item:hover .card{
+    transform: rotateY(180deg);
+}
+
+.grid-item{
+    perspective: 1000px;
+}
+html, body {
+    min-height: 100vh;
+    overflow: auto;
+}
+
+h1, p {
+    font-family: "Dubai", sans-serif;
+    font-weight: bold;
+}
+
+.front-text {
+    color: purple;
+}
+.back-text {
+    color: #2af598;
+}
+
+
